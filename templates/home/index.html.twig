@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil | Bibliothèque{% endblock %}
+
+{% block body %} 
+
+    <h1>Liste des livres</h1>
+
+    <ul>
+        {% for livre in livres %}
+            <li>
+                <ul>
+                    <li><h2>{{ livre.titre }}</h2></li>
+                    <li><h3>{{ livre.auteur }}</h3></li>
+                    <li><p>{{ livre.resume|slice(0, 20, '...') }}</p></li>   
+                </ul>
+            </li>   
+        {% endfor %}
+    </ul>
+
+{% endblock %}
